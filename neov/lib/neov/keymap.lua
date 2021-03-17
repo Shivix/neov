@@ -9,7 +9,7 @@ function Keymap:init(v)
     self.mode = "control"
 end
 
-local clipboard = ""
+local clipboard = "default"
 
 function Keymap:onKey(char, key)
     -- TODO: Make the keymap configurable
