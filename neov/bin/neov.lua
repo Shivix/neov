@@ -7,7 +7,7 @@ local component = require('component')
 
 _(term.isAvailable() or os.exit(1))
 
-print("V root is "..V_ROOT)
+print("NeoV root is "..V_ROOT)
 
 v = {HOME = os.getenv('HOME') or '/home', callbacks = {}, term = term, gpu = component.gpu}
 
@@ -24,7 +24,7 @@ local ARGV = table.pack(...)
 
 v.vscript = vs.Environment.new()
 vs.stdlib.register(v.vscript)
-v.keymap = require('v/keymap').new(v)
+v.keymap = require('neov/keymap').new(v)
 
 do
     local msfile = V_ROOT..'/share/neov/vs/main.vs'
