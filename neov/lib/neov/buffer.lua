@@ -70,14 +70,14 @@ function Buffer:drawLine(linenum)
 end
 
 function Buffer:readLine()
-    self.mode = 'command'
+    -- self.mode = 'command'
     self.term.setCursor(1, self.size.h)
     self.term.clearLine()
     self.term.write(self.prompt)
     self.term.setCursor(1 + #self.prompt, self.size.h)
     local line = self.term.read(nil, false)
-    self.mode = nil
-    self.term.setCursorBlink(false)
+    -- self.mode = nil
+    -- self.term.setCursorBlink(false)
     self:updateCursor()
     return line
 end
