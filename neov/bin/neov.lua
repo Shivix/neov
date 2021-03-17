@@ -15,7 +15,7 @@ v = {HOME = os.getenv('HOME') or '/home', callbacks = {}, term = term, gpu = com
 local vs = require('v-script')
 local io = require('io')
 local fs = require('filesystem')
-local Buffer = require('v/buffer')
+local Buffer = require('neov/buffer')
 local event = require('event')
 local shell = require('shell')
 local exit
