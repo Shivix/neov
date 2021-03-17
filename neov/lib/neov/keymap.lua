@@ -9,6 +9,8 @@ function Keymap:init(v)
     self.mode = "control"
 end
 
+local clipboard = ""
+
 function Keymap:onKey(char, key)
     -- TODO: Make the keymap configurable
     if self.mode == "text" then
@@ -70,6 +72,10 @@ function Keymap:onKey(char, key)
 					self.v.buf:moveCursor(0, -1)
 				elseif c == 'j' then
 					self.v.buf:moveCursor(0, 1)
+				elseif c == 'y' then
+					clipboard = self.v.buf:lines()
+				elseif c == 'p' then
+					self.v.buf:write(clipboard)
                 end
             end
         end
