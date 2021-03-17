@@ -75,7 +75,7 @@ function Keymap:onKey(char, key)
 				elseif c == 'y' then
 					clipboard = self.v.buf:lines()
 				elseif c == 'p' then
-					self.v.buf:write(clipboard)
+					self.v.buf:insert(clipboard)
                 end
             end
         end
