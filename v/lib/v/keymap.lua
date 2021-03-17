@@ -62,6 +62,14 @@ function Keymap:onKey(char, key)
                     self.v.buf:setTempStatus("-- INSERT --")
                     self.mode = 'text'
                     self.v.buf.mode = 'insert'
+				elseif c == 'h' then
+					self.v.buf:moveCursor(-1, 0)
+				elseif c == 'l' then
+					self.v.buf:moveCursor(1, 0)
+				elseif c == 'k' then
+					self.v.buf:moveCursor(0, -1)
+				elseif c == 'j' then
+					self.v.buf:moveCursor(0, 1)
                 end
             end
         end
