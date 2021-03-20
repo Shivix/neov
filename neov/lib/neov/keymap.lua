@@ -76,6 +76,13 @@ function Keymap:onKey(char, key)
 					clipboard = self.v.buf:readLine()
 				elseif c == 'p' then
 					self.v.buf:insert(clipboard)
+				elseif c == 'x' then
+					self.v.buf:delete()
+				elseif c == 'a' then
+					while(self.v.buf:back()) do end
+					self.v.buf:setTempStatus("-- INSERT --")
+					self.mode = 'text'
+					self.v.buf.mode = 'insert'
                 end
             end
         end
