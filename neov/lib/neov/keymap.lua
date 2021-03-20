@@ -79,7 +79,7 @@ function Keymap:onKey(char, key)
 				elseif c == 'x' then
 					self.v.buf:delete()
 				elseif c == 'a' then
-					while(self.v.buf:back()) do end
+					while(self.v.buf:forward()) do end
 					self.v.buf:setTempStatus("-- INSERT --")
 					self.mode = 'text'
 					self.v.buf.mode = 'insert'
