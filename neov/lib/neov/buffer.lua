@@ -159,7 +159,7 @@ function Buffer:back()
 end
 
 -- Move the cursor forward. Return true if the cursor actually moved.
-function Buffer:back()
+function Buffer:forward()
     local c = self.cursor
     if c.x > 1 then
         self:moveCursor(1, 0)
