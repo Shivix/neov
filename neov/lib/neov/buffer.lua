@@ -161,10 +161,10 @@ end
 -- Move the cursor forward. Return true if the cursor actually moved.
 function Buffer:forward()
     local c = self.cursor
-    if c.x > 1 then
+    if c.x < 1 then
         self:moveCursor(1, 0)
         return true
-    elseif c.y + self.scroll.y > 1 then
+    elseif c.y + self.scroll.y < 1 then
         local line = self.lines[c.y + self.scroll.y - 1]
         self:setCursor(#line + 1, c.y - 1)
         return true
